@@ -130,13 +130,12 @@ return b;
 
 function botones(nac, ced, nombre, y, m, d){
 
-btn1 = '';
-btn1 = creaForm('CI', nac, ced, y, m, d);
+btn = '';
+btn = creaForm('CI', nac, ced, y, m, d);
+btn = '</td><td>';
+btn = creaForm('P', nac, ced, y, m, d);
 
-btn2 = '';
-btn2 = creaForm('P', nac, ced, y, m, d);
-
-return btn1+'</td><td>'+btn2;
+return btn;
 }
 
 function isDevice(){
