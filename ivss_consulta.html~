@@ -37,7 +37,7 @@ ced.name='cedula';
 <input type='submit'>
 </form>
 <table width='100%' border>
-  <tr><td><a href='https://raw.githubusercontent.com/carloscelis/consulta_publica/master/ivss_consulta.html' target='_blank'>Actualizar</a></td></tr>
+  <tr><td><a href='https://raw.githubusercontent.com/carloscelis/consulta_publica/master/cne_consulta_csv.html' target='_blank'>Actualizar</a></td></tr>
 </table>
 </body>
 </html>
