@@ -71,7 +71,7 @@
         ced = data[row][1];       // Cedula
         nombre = data[row][2];       // Nombre
         html += '<td>' + nac + ' - ' + ced + '<br>' + nombre + '</td>\r\n';
-        html += '<td>' + botones(nac, ced) + '</td>\r\n';       // Nombre
+        html += '<td>' + boton(nac, ced) + '</td>\r\n';       // Nombre
         html += '</tr>\r\n';
       }
       $('#contents').html(html);
@@ -81,7 +81,7 @@
 </script>
 
 <script>
-function botones(nac, ced){
+function boton(nac, ced){
 
 btn = '';
 btn += "<form action='http://www.cne.gov.ve/web/registro_electoral/ce.php' method='get' target='_blank'>";
