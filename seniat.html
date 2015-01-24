@@ -1,0 +1,112 @@
+<HTML>
+    <HEAD>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
+        <meta charset="UTF-8">
+        <base href='http://contribuyente.seniat.gob.ve/BuscaRif/'>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <META http-equiv="Content-Style-Type" content="text/css">
+        <link rel="stylesheet" href="http://contribuyente.seniat.gob.ve/css/iseniat.css">
+
+        <title>Consulta de RIF </title>
+        <Script Language="JavaScript">
+            function doSubmit(){
+                document.consulta.busca.disabled = 'false';
+                validaForma();
+            }
+            function validaForma() {        
+                if(document.getElementById('p_rif').value != '' || document.getElementById('p_cedula').value != '') {
+                    document.forms[0].submit();
+                }else {
+                    alert('Debe introducir un rif o una cédula!!');
+                    document.consulta.busca.disabled = '';
+                    window.event.returnValue = false;
+                }
+            }
+        </Script>
+    </HEAD>
+
+    <body background="http://contribuyente.seniat.gob.ve/imagenes/fondoseniat.gif" bgcolor="#FFFFFF" text="#000000">
+        <form method="post" action="BuscaRif.jsp" onsubmit="doSubmit()" name="consulta" id="consulta">
+            
+            <br>
+            <table width="100%">
+                <tr>
+                    <td width="50%" align="left" class="letrasLista">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RIF</b></td>
+                    <td width="50%" align="center" >  
+                        <input alt="Rif del Contribuyente" style="font-family: Verdana; font-size: 10;" type="text" maxlength="10" name="p_rif" id="p_rif" title="Ingrese su número de Rif, según Ejm "  onChange="javascript:this.value=this.value.toUpperCase();" onblur="javascript:this.value=this.value.toUpperCase();">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%" align="left" class="letrasLista">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>CÉDULA O PASAPORTE</b></td>
+                    <td width="50%" align="center">  
+                        <input alt="Cédula/Pasaporte del Contribuyente" style="font-family: Verdana; font-size: 10;" type="text" maxlength="12" name="p_cedula" id="p_cedula" title="Ingrese su número de Cédula o Pasaporte, según Ejm "  onChange="javascript:this.value=this.value.toUpperCase();" onblur="javascript:this.value=this.value.toUpperCase();">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ejemplo del RIF: V123456789 <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="Verdana" size="1"> Si el RIF es menor a nueve (9) dígitos
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  complete  con ceros (0) a la izquierda </font><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ejemplo de la Cédula: 12345678 <br><br></td>
+                </tr>
+                <tr>
+                    <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ejemplo de Pasaporte: D1234567<br><br></td>
+                </tr>
+                <tr>
+                    <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Escriba las letras y/o números que observa en el recuadro:</td>
+                </tr>
+                <tr>
+                    <td width="50%" align="center"><br><img src="Captcha.jpg" border="0"></td>
+                    <td width="50%" align="center"><br><input style="font-family: Verdana; font-size: 10;" type="text" maxlength="10" name="codigo" id="codigo"></td>
+                </tr>
+                <tr>  
+                    <td width="50%" align="center"><br><input type="submit" value=" Buscar " class="boton" name="busca" ></td>
+                    <td width="50%" align="center"><br><input type="button" onClick="window.close();" value="Cancelar" class="boton"></td>
+                </tr>
+            </table>
+        </form>
+        <!-- VISUALIZAR RIF -->
+        
+
+        <table align="center">
+              <tr align="center">
+                 <td align="center">
+                     
+                     <br><b></b><br><br>
+                      
+                        <b><font face="Verdana" size="2">&nbsp;</b></font>
+                      
+					  
+                </td>
+              </tr>
+        </table>
+
+              
+        </table>    
+
+        <table>
+              <tr>
+                 <td colspan="2" align="center">
+                    <br><font face="Verdana" size="1">
+                     
+                     <br><br>
+                     
+                     <br>
+                     
+                     <br>
+                     
+                     <br>
+                     
+                     <br> 
+                     <br>
+                 </td>
+              </tr></font>
+        </table>
+
+</body>
+</HTML>
+
