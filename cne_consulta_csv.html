@@ -68,11 +68,9 @@
       for(var row in data) {
         html += '<tr>\r\n';
         nac = data[row][0];       // Nacionalidad
-        html += '<td>' + nac + '</td>\r\n';
         ced = data[row][1];       // Cedula
-        html += '<td>' + ced + '</td>\r\n';
         nombre = data[row][2];       // Nombre
-        html += '<td>' + nombre + '</td>\r\n';
+        html += '<td>' + nac + ' - ' + ced + '<br>' + nombre + '</td>\r\n';
         html += '<td>' + botones(nac, ced) + '</td>\r\n';       // Nombre
         html += '</tr>\r\n';
       }
