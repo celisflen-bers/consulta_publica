@@ -22,15 +22,15 @@
     } else {
       // source: File API availability - http://caniuse.com/#feat=fileapi
       // source: <output> availability - http://html5doctor.com/the-output-element/
-      document.writeln('The HTML5 APIs used in this form are only available in the following browsers:<br />');
+      document.writeln('The HTML5 APIs used in this form are only available in the following browsers:<br>');
       // 6.0 File API & 13.0 <output>
-      document.writeln(' - Google Chrome: 13.0 or later<br />');
+      document.writeln(' - Google Chrome: 13.0 or later<br>');
       // 3.6 File API & 6.0 <output>
-      document.writeln(' - Mozilla Firefox: 6.0 or later<br />');
+      document.writeln(' - Mozilla Firefox: 6.0 or later<br>');
       // 10.0 File API & 10.0 <output>
-      document.writeln(' - Internet Explorer: Not supported (partial support expected in 10.0)<br />');
+      document.writeln(' - Internet Explorer: Not supported (partial support expected in 10.0)<br>');
       // ? File API & 5.1 <output>
-      document.writeln(' - Safari: Not supported<br />');
+      document.writeln(' - Safari: Not supported<br>');
       // ? File API & 9.2 <output>
       document.writeln(' - Opera: Not supported');
       return false;
@@ -43,10 +43,10 @@
 
     // read the file metadata
     var output = ''
-        output += '<span style="font-weight:bold;">' + escape(file.name) + '</span><br />\n';
-        output += ' - FileType: ' + (file.type || 'n/a') + '<br />\n';
-        output += ' - FileSize: ' + file.size + ' bytes<br />\n';
-        output += ' - LastModified: ' + (file.lastModifiedDate ? file.lastModifiedDate.toLocaleDateString() : 'n/a') + '<br />\n';
+        output += '<span style="font-weight:bold;">' + escape(file.name) + '</span><br>\n';
+        output += ' - FileType: ' + (file.type || 'n/a') + '<br>\n';
+        output += ' - FileSize: ' + file.size + ' bytes<br>\n';
+        output += ' - LastModified: ' + (file.lastModifiedDate ? file.lastModifiedDate.toLocaleDateString() : 'n/a') + '<br>\n';
 
     // read the file contents
     printTable(file);
@@ -86,12 +86,34 @@
 </script>
 
 <script>
-function creaForm(a, nac_n, n, ced_n, c, y, m, d, s){
+function creaForm(btn, n, c, y, m, d){
 
 in_y = "<input type='hidden' name='y' value='" + y + "'>";
 in_m = "<input type='hidden' name='m' value='" + m + "'>";
 in_d = "<input type='hidden' name='d' value='" + d + "'>";
 
+if( btn == 'CI'){
+  /// Para asegurados
+  a='http://www.ivss.gob.ve:28083/CuentaIndividualIntranet/CtaIndividual_PortalCTRL';
+  nac_n='nacionalidad_aseg';
+  ced_n='cedula_aseg';
+  if(isDevice() == true){
+    s='CI';
+  }else{
+    s='Cuenta Individual';
+  }
+}else
+{
+  /// Para pensionados
+  a='http://www.ivss.gob.ve:28080/Pensionado/PensionadoCTRL';
+  nac_n='nacionalidad';
+  ced_n='cedula';
+  if(isDevice() == true){
+    s='Pens';
+  }else{
+    s='Pensionados';
+  }
+}
 
 b = '';
 b += "<form action='"+ a +"' method='get' target='_blank'>";
@@ -109,15 +131,22 @@ return b;
 function botones(nac, ced, nombre, y, m, d){
 
 btn1 = '';
-btn1 = creaForm('http://www.ivss.gob.ve:28083/CuentaIndividualIntranet/CtaIndividual_PortalCTRL', 'nacionalidad_aseg', nac, 'cedula_aseg', ced, y, m, d, 'Cuenta Individual');
+btn1 = creaForm('CI', nac, ced, y, m, d);
 
 btn2 = '';
-btn2 = creaForm('http://www.ivss.gob.ve:28080/Pensionado/PensionadoCTRL', 'nacionalidad', nac, 'cedula', ced, y, m, d, 'Pensionados');
+btn2 = creaForm('P', nac, ced, y, m, d);
 
 return btn1+'</td><td>'+btn2;
 }
-</script>
 
+function isDevice(){
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    return true;
+  }else{
+    return false;
+  }
+}
+</script>
 
 </head>
 
