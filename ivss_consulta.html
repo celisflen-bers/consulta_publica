@@ -1,10 +1,14 @@
+<!doctype html>
+
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
 <meta charset="UTF-8">
 <title>IVSS Consulta</title>
 <style>
-body{width:100%}
+table {
+    border: 1px solid black;
+}
 </style>
 <script>
 function red(form){
@@ -31,13 +35,13 @@ ced.name='cedula';
 <option value='E'>E</option>
 </select><br>
 <input type='number' id='ced' name='cedula_aseg' placeholder='Cédula'><br>
-<input type='number' name='y' placeholder='Año' size='4' min='1900' max='2014' step='1'>-
-<input type='number' name='m' placeholder='Mes' size='2' min='1' max='12' step='1'>-
-<input type='number' name='d' placeholder='Día' size='2' min='1' max='31' step='1' ><br>
+<input type='number' name='y' placeholder='Año' min='1900' max='2014' step='1'>-
+<input type='number' name='m' placeholder='Mes' min='1' max='12' step='1'>-
+<input type='number' name='d' placeholder='Día' min='1' max='31' step='1' ><br>
 <input type='reset'>
 <input type='submit'>
 </form>
-<table width='100%' border>
+<table style='width:100'>
   <tr><td><a href='https://raw.githubusercontent.com/carloscelis/consulta_publica/master/ivss_consulta.html' target='_blank'>Actualizar</a></td></tr>
 </table>
 </body>
