@@ -1,0 +1,28 @@
+<!doctype html>
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
+<meta charset="UTF-8">
+<title>CNE Consulta</title>
+<style>
+@media handheld
+table {
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<form action='http://www.cne.gov.ve/web/registro_electoral/ce.php' method='get'>
+<select name='nacionalidad'>
+<option value='V'>V</option>
+<option value='E'>E</option>
+</select><br>
+<input type='number' name='cedula' placeholder='Cédula'><br>
+<input type='submit'>
+</form>
+<table style='width:100%'>
+  <tr><td><a href='https://raw.githubusercontent.com/carloscelis/consulta_publica/master/cne_consulta_min.html' target='_blank' >Actualizar</a></td></tr>
+</table>
+</body>
+</html>
