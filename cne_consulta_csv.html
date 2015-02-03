@@ -70,7 +70,8 @@
         nac = data[row][0];       // Nacionalidad
         ced = data[row][1];       // Cedula
         nombre = data[row][2];       // Nombre
-        html += '<td>' + nac + ' - ' + ced + '<br>' + nombre + '</td>\r\n';
+        var nombre_array = nombre.split(',');
+        html += '<td>' + nac + ' - ' + ced + '<br>' + nombre_array[0] + ' ' + nombre_array[1] + '<br>' + nombre_array[2] + ' ' + nombre_array[3] + '</td>\r\n';
         html += '<td>' + boton(nac, ced) + '</td>\r\n';       // Nombre
         html += '</tr>\r\n';
       }

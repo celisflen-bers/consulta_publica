@@ -70,12 +70,13 @@
         nac = data[row][0];       // Nacionalidad
         ced = data[row][1];       // Cedula
         nombre = data[row][2];       // Nombre
-        html += '<td>' + nac + ' - ' + ced + '<br>' + nombre + '</td>\r\n';
+        var nombre_array = nombre.split(',');
+        html += '<td>' + nac + ' - ' + ced + '<br>' + nombre_array[0] + ' ' + nombre_array[1] + '<br>' + nombre_array[2] + ' ' + nombre_array[3] + '</td>\r\n';
         fecha = data[row][3].split("-");
         y = fecha[0];
         m = fecha[1];
         d = fecha[2];
-        html += '<td>' + y + '/' + m + '/' + d + '</td>\r\n';       // Nombre
+        html += '<td>' + y + '-' + m + '-' + d + '</td>\r\n';       // Nombre
         html += '<td>' + botones(nac, ced, nombre, y, m, d) + '</td>\r\n';       // Nombre
         html += '</tr>\r\n';
       }
@@ -131,9 +132,9 @@ return b;
 function botones(nac, ced, nombre, y, m, d){
 
 btn = '';
-btn = creaForm('CI', nac, ced, y, m, d);
-btn = '</td><td>';
-btn = creaForm('P', nac, ced, y, m, d);
+btn += creaForm('CI', nac, ced, y, m, d);
+btn += '</td><td>';
+btn += creaForm('P', nac, ced, y, m, d);
 
 return btn;
 }
