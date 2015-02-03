@@ -77,8 +77,8 @@
         m = fecha[1];
         d = fecha[2];
         html += '<td>' + y + '-' + m + '-' + d + '</td>\r\n';       // Nombre
-        html += '<td>' + botones(nac, ced, nombre, y, m, d) + '</td>\r\n';       // Nombre
         html += '</tr>\r\n';
+        html += '<tr><td>' + botones(nac, ced, nombre, y, m, d) + '</td></tr>\r\n';       // Nombre
       }
       $('#contents').html(html);
     };
