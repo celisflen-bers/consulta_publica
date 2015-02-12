@@ -67,18 +67,19 @@
       var html = '';
       for(var row in data) {
         html += '<tr>\r\n';
+        //alert(data[row]);
         nac = data[row][0];       // Nacionalidad
         ced = data[row][1];       // Cedula
         nombre = data[row][2];       // Nombre
         var nombre_array = nombre.split(',');
-        html += '<td>' + nac + ' - ' + ced + '<br>' + nombre_array[0] + ' ' + nombre_array[1] + '<br>' + nombre_array[2] + ' ' + nombre_array[3] + '</td>\r\n';
+        html += '<td>' + nac + ' - ' + ced + '<br>' + nombre_array[0] + ' ' + nombre_array[1] + '</td>\r\n';
         fecha = data[row][3].split("-");
         y = fecha[0];
         m = fecha[1];
         d = fecha[2];
-        html += '<td>' + y + '-' + m + '-' + d + '</td>\r\n';       // Nombre
+        html += '<td>' + y + '-' + m + '-' + d + '<br>' + nombre_array[2] + ' ' + nombre_array[3] + '</td>\r\n';       // Nombre
         html += '</tr>\r\n';
-        html += '<tr><td>' + botones(nac, ced, nombre, y, m, d) + '</td></tr>\r\n';       // Nombre
+        html += '<tr><td>' + botones( nac, ced, parseInt(y), parseInt(m), parseInt(d) ) + '</td></tr>\r\n';       // Nombre
       }
       $('#contents').html(html);
     };
@@ -129,7 +130,7 @@ b += "</form>";
 return b;
 }
 
-function botones(nac, ced, nombre, y, m, d){
+function botones(nac, ced, y, m, d){
 
 btn = '';
 btn += creaForm('CI', nac, ced, y, m, d);
